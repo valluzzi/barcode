@@ -14,5 +14,7 @@ def read_barcode(file_path):
         print(f"[INFO] Found {barcode_type} barcode: {barcode_data}")
 
 # Usage
-read_barcode("barcode.png")
-read_barcode("qrcode.png")
+# list all png and jpg files in the current directory
+import glob
+for file_path in glob.glob("*.png") + glob.glob("*.jpg"):
+    print(f"{file_path} - {read_barcode(file_path)}")
